@@ -24,6 +24,7 @@ Service Url : http://localhost:8080/userOperation/getuser?userEmail=alok@gmail.c
 3. Update User
 
 Update user name of user (useremail)
+
 Service Url : http://localhost:8080/userOperation/updateuser
 
 Post Body :
