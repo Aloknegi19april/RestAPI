@@ -6,8 +6,10 @@ Service Urls :
 1. Add User
 
 Service Url : http://localhost:8080/userOperation/adduser
+
 Post Body :
 {
+
     "userName": "Alok Negi",
     "userEmail": "alok@gmail.com"
 }
@@ -23,8 +25,10 @@ Service Url : http://localhost:8080/userOperation/getuser?userEmail=alok@gmail.c
 
 Update user name of user (useremail)
 Service Url : http://localhost:8080/userOperation/updateuser
+
 Post Body :
 {
+
     "userName": "Alok Negi",
     "userEmail": "alok@gmail.com"
 }
