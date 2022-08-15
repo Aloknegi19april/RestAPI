@@ -5,6 +5,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -33,10 +34,10 @@ public class UserController {
 		return userServiceInterface.getUserDetails(userEmail);
 	}
 	
-	@PostMapping(value = "/updateuser")
-	public ResponseDTO updateUser(@RequestBody UserDTO userDTO) throws Exception {
+	@PutMapping(value = "/updateuser")
+	public ResponseDTO updateUser(@RequestParam String email, String name) throws Exception {
 		
-		return userServiceInterface.updateUser(userDTO);
+		return userServiceInterface.updateUser(email, name);
 	}
 	
 	@DeleteMapping(value = "/deleteuser")

@@ -58,17 +58,17 @@ public class UserServiceImpl implements UserServiceInterface {
 	}
 
 	@Override
-	public ResponseDTO updateUser(UserDTO userDTO) throws Exception {
+	public ResponseDTO updateUser(String email, String name) throws Exception {
 
 		ResponseDTO responseDTO = new ResponseDTO();
-		Optional<UserEntity> getUsernew = userRepository.findByUserEmail(userDTO.getUserEmail());
+		Optional<UserEntity> getUsernew = userRepository.findByUserEmail(email);
 		if (getUsernew.isEmpty()) {
 			responseDTO.setResponse(Boolean.FALSE);
 			responseDTO.setResponseMessage("User Not Present");
 			return responseDTO;
 		}
 		UserEntity userEntity = getUsernew.get();
-		userEntity.setUserName(userDTO.getUserName());
+		userEntity.setUserName(name);
 		userRepository.save(userEntity);
 		responseDTO.setResponse(Boolean.TRUE);
 		responseDTO.setResponseMessage("User Name Updated");
